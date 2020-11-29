@@ -14,7 +14,7 @@
     </sui-grid-row>
     <sui-grid-row>
       <sui-grid-column :width="16">
-        <sui-tab :menu="{ secondary: true }">
+        <sui-tab>
           <sui-tab-pane title="Hardware">
             <p style="text-align: center;">CPU Usage: 7.15%</p>
             <p style="text-align: center;">Network Traffic: 0.0 B/second</p>
