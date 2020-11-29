@@ -30,27 +30,27 @@ const router = new VueRouter({
           name: "server-overview",
         },
         {
-          path: 'logs/',
+          path: 'server/logs/',
           component: ServerOverviewLogs,
           name: "server-logs",
         },
         {
-          path: 'system/',
+          path: 'server/system/',
           component: ServerOverviewSystem,
           name: "server-system",
         },
         {
-          path: 'graphs/',
+          path: 'server/graphs/',
           component: ServerOverviewGraphs,
           name: "server-graphs",
         },
         {
-          path: 'update/',
+          path: 'server/update/',
           component: ServerOverviewUpdate,
           name: "server-update",
         },
         {
-          path: 'settings/',
+          path: 'server/settings/',
           component: ServerOverviewSettings,
           name: "server-settings",
         },
