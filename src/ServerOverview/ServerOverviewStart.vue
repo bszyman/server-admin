@@ -2,14 +2,7 @@
   <sui-grid>
     <sui-grid-row>
       <sui-grid-column :width="16">
-        <sui-menu :widths="6">
-          <sui-menu-item active>Overview</sui-menu-item>
-          <sui-menu-item><router-link :to="{ name: 'server-logs', params: {}}">Logs</router-link></sui-menu-item>
-          <sui-menu-item><router-link :to="{ name: 'server-system', params: {}}">System</router-link></sui-menu-item>
-          <sui-menu-item><router-link :to="{ name: 'server-graphs', params: {}}">Graphs</router-link></sui-menu-item>
-          <sui-menu-item><router-link :to="{ name: 'server-update', params: {}}">Update</router-link></sui-menu-item>
-          <sui-menu-item><router-link :to="{ name: 'server-settings', params: {}}">Settings</router-link></sui-menu-item>
-        </sui-menu>
+        <ServerOverviewMenu selected-section="Overview" />
       </sui-grid-column>
     </sui-grid-row>
     <sui-grid-row>
@@ -52,8 +45,10 @@
 </template>
 
 <script>
+import ServerOverviewMenu from "@/ServerOverview/Components/ServerOverviewMenu";
 export default {
-  name: "ServerOverviewStart"
+  name: "ServerOverviewStart",
+  components: {ServerOverviewMenu}
 }
 </script>
 

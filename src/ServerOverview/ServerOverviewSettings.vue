@@ -2,14 +2,7 @@
   <sui-grid>
     <sui-grid-row>
       <sui-grid-column :width="16">
-        <sui-menu :widths="6">
-          <sui-menu-item><router-link :to="{ name: 'server-overview', params: {}}">Overview</router-link></sui-menu-item>
-          <sui-menu-item><router-link :to="{ name: 'server-logs', params: {}}">Logs</router-link></sui-menu-item>
-          <sui-menu-item><router-link :to="{ name: 'server-system', params: {}}">System</router-link></sui-menu-item>
-          <sui-menu-item><router-link :to="{ name: 'server-graphs', params: {}}">Graphs</router-link></sui-menu-item>
-          <sui-menu-item><router-link :to="{ name: 'server-update', params: {}}">Update</router-link></sui-menu-item>
-          <sui-menu-item active>Settings</sui-menu-item>
-        </sui-menu>
+        <ServerOverviewMenu selected-section="Settings" />
       </sui-grid-column>
     </sui-grid-row>
     <sui-grid-row>
@@ -30,7 +23,7 @@
                 <label>Rendezvous Name</label>
                 <input value="Cocos" />
               </sui-form-field>
-              <p>Computers on the server's local subnet will be able to reach it at <Cocos.local>.</Cocos.local></p>
+              <p>Computers on the server's local subnet will be able to reach it at Cocos.local.</p>
             </sui-form>
           </sui-tab-pane>
           <sui-tab-pane title="Date & Time">
@@ -119,8 +112,11 @@
 </template>
 
 <script>
+import ServerOverviewMenu from "@/ServerOverview/Components/ServerOverviewMenu";
+
 export default {
   name: "ServerOverviewStart",
+  components: {ServerOverviewMenu},
   data() {
     return {
       selectedCity: 1,

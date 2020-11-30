@@ -2,11 +2,7 @@
   <sui-grid>
     <sui-grid-row>
       <sui-grid-column :width="16">
-        <sui-menu :widths="3">
-          <sui-menu-item active>Overview</sui-menu-item>
-          <sui-menu-item><router-link :to="{ name: 'server-logs', params: {}}">Log</router-link></sui-menu-item>
-          <sui-menu-item><router-link :to="{ name: 'server-settings', params: {}}">Settings</router-link></sui-menu-item>
-        </sui-menu>
+        <FirewallMenu selected-section="Overview" />
       </sui-grid-column>
     </sui-grid-row>
     <sui-grid-row>
@@ -49,8 +45,10 @@
 </template>
 
 <script>
+import FirewallMenu from "@/Modules/Firewall/Components/FirewallMenu";
 export default {
-  name: "FirewallOverview"
+  name: "FirewallOverview",
+  components: {FirewallMenu}
 }
 </script>
 

@@ -1,0 +1,26 @@
+<template>
+  <sui-grid>
+    <sui-grid-row>
+      <sui-grid-column :width="16">
+        <FirewallMenu selected-section="Settings" />
+      </sui-grid-column>
+    </sui-grid-row>
+    <sui-grid-row>
+      <sui-grid-column :width="16">
+
+      </sui-grid-column>
+    </sui-grid-row>
+  </sui-grid>
+</template>
+
+<script>
+import FirewallMenu from "@/Modules/Firewall/Components/FirewallMenu";
+export default {
+  name: "FirewallSettings",
+  components: {FirewallMenu}
+}
+</script>
+
+<style scoped>
+
+</style>

@@ -2,12 +2,7 @@
   <sui-grid>
     <sui-grid-row>
       <sui-grid-column :width="16">
-        <sui-menu :widths="4">
-          <sui-menu-item active>Overview</sui-menu-item>
-          <sui-menu-item><router-link :to="{ name: 'server-logs', params: {}}">Logs</router-link></sui-menu-item>
-          <sui-menu-item><router-link :to="{ name: 'server-system', params: {}}">Connections</router-link></sui-menu-item>
-          <sui-menu-item><router-link :to="{ name: 'server-settings', params: {}}">Settings</router-link></sui-menu-item>
-        </sui-menu>
+        <ApplicationServerMenu selected-section="Overview" />
       </sui-grid-column>
     </sui-grid-row>
     <sui-grid-row>
@@ -50,8 +45,10 @@
 </template>
 
 <script>
+import ApplicationServerMenu from "@/Modules/ApplicationServer/Components/ApplicationServerMenu";
 export default {
-  name: "ApplicationServerOverview"
+  name: "ApplicationServerOverview",
+  components: {ApplicationServerMenu}
 }
 </script>
 

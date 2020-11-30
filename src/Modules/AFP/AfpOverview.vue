@@ -2,13 +2,7 @@
   <sui-grid>
     <sui-grid-row>
       <sui-grid-column :width="16">
-        <sui-menu :widths="5">
-          <sui-menu-item active>Overview</sui-menu-item>
-          <sui-menu-item><router-link :to="{ name: 'server-logs', params: {}}">Logs</router-link></sui-menu-item>
-          <sui-menu-item><router-link :to="{ name: 'server-system', params: {}}">Connections</router-link></sui-menu-item>
-          <sui-menu-item><router-link :to="{ name: 'server-graphs', params: {}}">Graphs</router-link></sui-menu-item>
-          <sui-menu-item><router-link :to="{ name: 'server-settings', params: {}}">Settings</router-link></sui-menu-item>
-        </sui-menu>
+        <afp-menu selected-section="Overview" />
       </sui-grid-column>
     </sui-grid-row>
     <sui-grid-row>
@@ -51,8 +45,10 @@
 </template>
 
 <script>
+import AfpMenu from "@/Modules/AFP/Components/AfpMenu";
 export default {
-  name: "AfpOverview"
+  name: "AfpOverview",
+  components: {AfpMenu}
 }
 </script>
 
