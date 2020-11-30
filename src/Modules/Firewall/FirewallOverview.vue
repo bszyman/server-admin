@@ -7,38 +7,34 @@
     </sui-grid-row>
     <sui-grid-row>
       <sui-grid-column :width="16">
-        <sui-table compact basic="very">
-          <sui-table-body>
-            <sui-table-row>
-              <sui-table-cell>System Version:</sui-table-cell>
-              <sui-table-cell>Mac OS X 10.3.4 (Build 7H63)</sui-table-cell>
-            </sui-table-row>
-            <sui-table-row>
-              <sui-table-cell>Server Version:</sui-table-cell>
-              <sui-table-cell>Mac OS X Server 10.3.4 (Build 7H63)</sui-table-cell>
-            </sui-table-row>
-            <sui-table-row>
-              <sui-table-cell>Computer Name:</sui-table-cell>
-              <sui-table-cell>Cocos</sui-table-cell>
-            </sui-table-row>
-            <sui-table-row>
-              <sui-table-cell>Rendezvous Name:</sui-table-cell>
-              <sui-table-cell>Cocos.local</sui-table-cell>
-            </sui-table-row>
-            <sui-table-row>
-              <sui-table-cell>Default AppleTalk Zone:</sui-table-cell>
-              <sui-table-cell>Unspecified</sui-table-cell>
-            </sui-table-row>
-            <sui-table-row>
-              <sui-table-cell>License Type:</sui-table-cell>
-              <sui-table-cell>Unlimited-client license</sui-table-cell>
-            </sui-table-row>
-          </sui-table-body>
-        </sui-table>
-        <sui-divider />
-        <p style="text-align: center;">
-          System Start Time: Sunday, September 1, 2019 11:40:48 AM America/New_York
+        <p style="text-align: center; margin-bottom: 25px;">
+          Firewall Service is: Stopped
         </p>
+
+        <sui-divider />
+
+        <div style="margin-top: 40px; min-height: 500px;">
+          <textarea style="width: 70%; margin: 0 15%; min-height: 300px;">
+            01000 0 0 allow ip from any to any via lo0
+            01010 0 0 deny ip from any to 127.0.0.0/8
+            01020 0 0 deny ip from 224.0.0.0/4 to any in
+            01030 0 0 deny tcp from any to 224.0.0.0/4
+            12300 0 0 allow tcp from any to any 22 in
+            12301 0 0 allow udp from any to any 22 in
+            12302 0 0 allow tcp from any to any 311 in
+            12303 0 0 allow tcp from any to any 625 in
+            12304 0 0 allow tcp from any to any 687 in
+            12305 0 0 allow tcp from any to any in icmptype 0
+            12306 0 0 allow igmp from any to any in
+            63200 0 0 deny icmp from any to any in icmptype 0
+            63300 0 0 deny igmp from any to any in
+            65000 0 0 deny tcp from any to any in setup
+            65535 0 0 allow ip from any to any
+          </textarea>
+        </div>
+
+        <sui-divider />
+        <p style="text-align: center;"></p>
       </sui-grid-column>
     </sui-grid-row>
   </sui-grid>
