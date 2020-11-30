@@ -7,7 +7,14 @@
     </sui-grid-row>
     <sui-grid-row>
       <sui-grid-column :width="16">
-
+        <sui-tab>
+          <sui-tab-pane title="Subnets">
+            <h3>Subnets</h3>
+          </sui-tab-pane>
+          <sui-tab-pane title="Logging">
+            <h3>Logging</h3>
+          </sui-tab-pane>
+        </sui-tab>
       </sui-grid-column>
     </sui-grid-row>
   </sui-grid>
