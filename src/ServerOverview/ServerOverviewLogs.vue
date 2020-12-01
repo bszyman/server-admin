@@ -9,14 +9,14 @@
       <sui-grid-row>
         <sui-grid-column :width="16">
           <sui-form-field>
-            <textarea rows="21" readonly></textarea>
+            <textarea rows="31" readonly></textarea>
           </sui-form-field>
           <div class="controlBar">
             <div>
               <sui-form-field inline>
                 <label>Show:</label>
                 <sui-dropdown
-                    placeholder="Closest City"
+                    placeholder="Select Log"
                     selection
                     :options="logTypeOptions"
                     v-model="selectedLogType"

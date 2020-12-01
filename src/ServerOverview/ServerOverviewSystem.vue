@@ -22,7 +22,7 @@
           <sui-tab-pane title="Quotas">
             <sui-form>
               <sui-form-field>
-                <textarea rows="21" readonly>No users and groups quotas</textarea>
+                <textarea rows="31" readonly>No users and groups quotas</textarea>
               </sui-form-field>
             </sui-form>
           </sui-tab-pane>
