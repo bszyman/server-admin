@@ -7,7 +7,8 @@
     </sui-grid-row>
     <sui-grid-row>
       <sui-grid-column :width="16">
-
+        <sui-segment></sui-segment>
+        <p>Number of clients: 0</p>
       </sui-grid-column>
     </sui-grid-row>
   </sui-grid>
