@@ -1,5 +1,5 @@
 <template>
-  <sui-menu :widths="this.sections.length">
+  <sui-menu>
     <router-link
         v-for="item in sections"
         :key="item.id"
@@ -29,14 +29,9 @@ export default {
           id: 2
         },
         {
-          name: "Connections",
-          pathName: "as-connections",
-          id: 3
-        },
-        {
           name: "Settings",
           pathName: "as-settings",
-          id: 5
+          id: 3
         },
       ]
     }

@@ -9,10 +9,72 @@
       <sui-grid-column :width="16">
         <sui-tab>
           <sui-tab-pane title="General">
-            <h3>General</h3>
+            <sui-form>
+              <h4>Configuration Type:</h4>
+              <sui-form-field>
+                <sui-checkbox
+                    radio
+                    name="configuration"
+                    label="Load remote configuration"
+                    v-model="configurationSetting"
+                    value="1"
+                />
+              </sui-form-field>
+              <sui-form-field inline style="margin-left: 50px;">
+                <label for="jboss-net-boot-url">JBoss net-boot URL:</label>
+                <input name="jboss-net-boot-url" type="text">
+              </sui-form-field>
+              <sui-form-field>
+                <sui-checkbox
+                    radio
+                    name="configuration"
+                    label="Use local configuration"
+                    v-model="configurationSetting"
+                    value="2"
+                />
+              </sui-form-field>
+              <sui-form-field inline style="margin-left: 50px;">
+                <label>Configuration Name:</label>
+                <sui-dropdown
+                    placeholder="Configuration Name"
+                    selection
+                    search
+                    :options="configuationNameOptions"
+                    v-model="selectedConfigurationName"
+                />
+              </sui-form-field>
+              <sui-form-field>
+                <sui-checkbox
+                    radio
+                    name="configuration"
+                    label="Tomcat only"
+                    v-model="configurationSetting"
+                    value="3"
+                />
+              </sui-form-field>
+            </sui-form>
           </sui-tab-pane>
           <sui-tab-pane title="Backup">
-            <h3>Backup</h3>
+            <div style="width: 600px; margin: 0 auto;">
+              <div style="margin-top: 30px; margin-bottom: 30px;">
+                <p>
+                  Back up your configuration to preserve a known good state or
+                  use the archive to create a duplicate configuration on another host.
+                </p>
+                <div style="text-align: right;">
+                  <sui-button>Backup...</sui-button>
+                </div>
+              </div>
+              <div style="margin-bottom: 30px;">
+                <p>
+                  Restore from an archive to return to a known good state or to
+                  duplicate a saved configuration from another host.
+                </p>
+                <div style="text-align: right;">
+                  <sui-button>Restore...</sui-button>
+                </div>
+              </div>
+            </div>
           </sui-tab-pane>
         </sui-tab>
       </sui-grid-column>
@@ -24,7 +86,16 @@
 import ApplicationServerMenu from "@/Modules/ApplicationServer/Components/ApplicationServerMenu";
 export default {
   name: "ApplicationServerSettings",
-  components: {ApplicationServerMenu}
+  components: {ApplicationServerMenu},
+  data() {
+    const configuationNameOptions = [];
+
+    return {
+      configurationSetting: 1,
+      selectedConfigurationName: null,
+      configuationNameOptions: configuationNameOptions,
+    }
+  }
 }
 </script>
 
