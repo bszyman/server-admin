@@ -6,7 +6,14 @@
           <ServiceNavigator selectedService="AFP" />
         </sui-grid-column>
         <sui-grid-column :width="12">
-          <router-view></router-view>
+          <div style="min-height: 750px;">
+            <router-view></router-view>
+          </div>
+
+          <div style="width: 100%; margin: 10px 0; text-align: right;">
+            <sui-button>Revert</sui-button>
+            <sui-button positive>Save</sui-button>
+          </div>
         </sui-grid-column>
       </sui-grid-row>
     </sui-grid>
