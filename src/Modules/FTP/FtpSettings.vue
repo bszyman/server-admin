@@ -28,6 +28,7 @@
               <sui-form-field inline>
                 <label for="authentication-option">Authentication:</label>
                 <sui-dropdown
+                    id="authentication-option"
                     placeholder="Authentication Method"
                     selection
                     :options="authTypes"

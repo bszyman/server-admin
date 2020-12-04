@@ -1,5 +1,5 @@
 <template>
-  <sui-menu :widths="this.sections.length">
+  <sui-menu>
     <router-link
         v-for="item in sections"
         :key="item.id"
