@@ -12,10 +12,32 @@
             <h3>General</h3>
           </sui-tab-pane>
           <sui-tab-pane title="Logging">
-            <h3>Logging</h3>
+            <sui-form>
+              <sui-form-field>
+                <sui-checkbox label="Enable Logging" />
+              </sui-form-field>
+              <div style="margin-left: 50px;">
+                <sui-form-field>
+                  <sui-checkbox label="Log all allowed packets" />
+                </sui-form-field>
+                <sui-form-field>
+                  <sui-checkbox label="Log all denied packets" />
+                </sui-form-field>
+                <sui-form-field inline>
+                  <label for="log-only">Log Only</label>
+                  <input id="log-only" type="number" value="1000" />
+                  <span style="margin-left: 10px;">packets</span>
+                </sui-form-field>
+              </div>
+            </sui-form>
           </sui-tab-pane>
           <sui-tab-pane title="Advanced">
-            <h3>Advanced</h3>
+            <sui-segment></sui-segment>
+            <div is="sui-button-group">
+              <sui-button icon="plus" />
+              <sui-button icon="minus" />
+              <sui-button icon="pencil alternate" />
+            </div>
           </sui-tab-pane>
         </sui-tab>
       </sui-grid-column>
