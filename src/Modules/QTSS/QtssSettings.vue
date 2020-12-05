@@ -40,18 +40,18 @@
               </sui-form-field>
               <sui-form-field inline>
                 <sui-checkbox label="Accept incoming broadcasts" />
-                <sui-button>Set Password...</sui-button>
+                <sui-button compact>Set Password...</sui-button>
               </sui-form-field>
               <sui-form-field inline>
                 <sui-checkbox label="Enable home directory streaming" />
               </sui-form-field>
               <sui-form-field inline>
                 <sui-checkbox label="Enable web-based administration" />
-                <sui-button>Set Password...</sui-button>
+                <sui-button compact>Set Password...</sui-button>
               </sui-form-field>
             </sui-form>
           </sui-tab-pane>
-          <sui-tab-pane title="IP Bidings">
+          <sui-tab-pane title="IP Bindings">
             <sui-form>
               <sui-form-fields grouped>
                 <label for="streaming_opt">Enable streaming on:</label>
