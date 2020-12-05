@@ -10,9 +10,12 @@
             <router-view></router-view>
           </div>
 
-          <div style="width: 100%; margin: 10px 0; text-align: right;">
-            <sui-button>Revert</sui-button>
-            <sui-button positive>Save</sui-button>
+          <div class="controlBar">
+            <div></div>
+            <div>
+              <sui-button>Revert</sui-button>
+              <sui-button positive>Save</sui-button>
+            </div>
           </div>
         </sui-grid-column>
       </sui-grid-row>

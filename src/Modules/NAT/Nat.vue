@@ -6,7 +6,17 @@
           <ServiceNavigator selectedService="NAT" />
         </sui-grid-column>
         <sui-grid-column :width="12">
-          <router-view></router-view>
+          <div style="min-height: 750px;">
+            <router-view></router-view>
+          </div>
+
+          <div class="controlBar">
+            <div></div>
+            <div>
+              <sui-button>Revert</sui-button>
+              <sui-button positive>Save</sui-button>
+            </div>
+          </div>
         </sui-grid-column>
       </sui-grid-row>
     </sui-grid>
