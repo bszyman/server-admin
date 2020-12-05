@@ -85,6 +85,7 @@
                     <div is="sui-button-group" style="margin-bottom: 15px;">
                       <sui-button icon="plus" compact />
                       <sui-button icon="minus" compact />
+                      <sui-button icon="pencil alternate" compact />
                     </div>
                   </sui-grid-column>
                 </sui-grid-row>
