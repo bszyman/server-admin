@@ -289,7 +289,7 @@
                     placeholder="Select Level"
                     selection
                     :options="smtpSSLOptions"
-                    v-model="selectedSMTPSSLOptions"
+                    v-model="selectedSMTPSSL"
                 />
               </sui-form-field>
               <sui-form-field inline>
@@ -299,7 +299,7 @@
                     placeholder="Select Level"
                     selection
                     :options="imappopSSLOptions"
-                    v-model="selectedIMAPPOPSSLOptions"
+                    v-model="selectedIMAPPOPSSL"
                 />
               </sui-form-field>
             </sui-form>
