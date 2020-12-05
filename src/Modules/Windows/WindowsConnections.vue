@@ -7,7 +7,15 @@
     </sui-grid-row>
     <sui-grid-row>
       <sui-grid-column :width="16">
-
+        <sui-segment></sui-segment>
+        <div class="controlBar">
+          <div>
+            <p>Number of connections: 0</p>
+          </div>
+          <div>
+            <sui-button>Disconnect...</sui-button>
+          </div>
+        </div>
       </sui-grid-column>
     </sui-grid-row>
   </sui-grid>

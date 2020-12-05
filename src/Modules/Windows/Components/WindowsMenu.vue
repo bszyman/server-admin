@@ -30,7 +30,7 @@ export default {
         },
         {
           name: "Connections",
-          pathName: "win-logs",
+          pathName: "win-connections",
           id: 3
         },
         {
