@@ -7,7 +7,13 @@
     </sui-grid-row>
     <sui-grid-row>
       <sui-grid-column :width="16">
-
+        <sui-form>
+          <sui-segment></sui-segment>
+          <sui-divider />
+          <sui-form-field>
+            <textarea></textarea>
+          </sui-form-field>
+        </sui-form>
       </sui-grid-column>
     </sui-grid-row>
   </sui-grid>

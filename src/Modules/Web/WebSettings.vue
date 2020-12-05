@@ -9,19 +9,96 @@
       <sui-grid-column :width="16">
         <sui-tab>
           <sui-tab-pane title="General">
-            <h3>General</h3>
+            <sui-form>
+              <sui-form-field inline>
+                <label>Maximum simultaneous connections:</label>
+                <input type="number">
+              </sui-form-field>
+              <sui-form-field inline>
+                <label>Maximum persistent connections:</label>
+                <input type="number">
+              </sui-form-field>
+              <sui-form-field inline>
+                <label>Connection timeout:</label>
+                <input type="number">
+                <span style="margin-left: 10px;">seconds</span>
+              </sui-form-field>
+              <sui-form-field inline>
+                <label>Maximum simultaneous connections:</label>
+                <input type="number">
+              </sui-form-field>
+              <sui-form-field inline>
+                <label>Maximum simultaneous connections:</label>
+                <input type="number">
+              </sui-form-field>
+            </sui-form>
           </sui-tab-pane>
           <sui-tab-pane title="Sites">
-            <h3>Sites</h3>
+            <sui-form>
+              <sui-segment></sui-segment>
+              <div is="sui-button-group" style="margin-bottom: 15px;">
+                <sui-button icon="plus" compact />
+                <sui-button icon="minus" compact />
+                <sui-button icon="pencil alternate" compact />
+              </div>
+            </sui-form>
           </sui-tab-pane>
           <sui-tab-pane title="MIME Types">
-            <h3>MIME Types</h3>
+            <sui-form>
+              <h4>MIME Types</h4>
+              <sui-segment></sui-segment>
+              <div is="sui-button-group" style="margin-bottom: 15px;">
+                <sui-button icon="plus" compact />
+                <sui-button icon="minus" compact />
+                <sui-button icon="pencil alternate" compact />
+              </div>
+
+              <sui-divider />
+
+              <h4>Content Handlers</h4>
+              <sui-segment></sui-segment>
+              <div is="sui-button-group" style="margin-bottom: 15px;">
+                <sui-button icon="plus" compact />
+                <sui-button icon="minus" compact />
+                <sui-button icon="pencil alternate" compact />
+              </div>
+            </sui-form>
           </sui-tab-pane>
           <sui-tab-pane title="Proxy">
-            <h3>Proxy</h3>
+            <sui-form>
+              <sui-form-field>
+                <sui-checkbox label="Enable Proxy" />
+              </sui-form-field>
+
+              <div style="margin-left: 50px;">
+                <sui-form-field inline>
+                  <label>Maximum cache size:</label>
+                  <input type="number">
+                  <span style="margin-left: 10px;">MB</span>
+                </sui-form-field>
+                <sui-form-field inline>
+                  <label>Cache folder:</label>
+                  <input type="text">
+                  <sui-button icon="ellipsis horizontal" style="margin-left: 10px;" compact />
+                </sui-form-field>
+
+                <h4>Blocked Hosts</h4>
+                <sui-segment></sui-segment>
+                <div is="sui-button-group" style="margin-bottom: 15px;">
+                  <sui-button icon="plus" compact />
+                  <sui-button icon="minus" compact />
+                </div>
+              </div>
+            </sui-form>
           </sui-tab-pane>
           <sui-tab-pane title="Modules">
-            <h3>Modules</h3>
+            <sui-segment></sui-segment>
+            <div is="sui-button-group" style="margin-bottom: 15px;">
+              <sui-button icon="plus" compact />
+              <sui-button icon="copy" compact />
+              <sui-button icon="minus" compact />
+              <sui-button icon="pencil alternate" compact />
+            </div>
           </sui-tab-pane>
         </sui-tab>
       </sui-grid-column>
