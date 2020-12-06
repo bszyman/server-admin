@@ -94,33 +94,36 @@
                   <span style="margin-left: 10px;">day(s)</span>
                 </sui-form-field>
               </sui-form-fields>
-              <sui-segment>
-                <h5>Select events to include in the access log:</h5>
-                <sui-form-fields inline>
-                  <sui-form-field>
-                    <sui-checkbox label="Login" />
-                  </sui-form-field>
-                  <sui-form-field>
-                    <sui-checkbox label="Create File" />
-                  </sui-form-field>
-                </sui-form-fields>
-                <sui-form-fields inline>
-                  <sui-form-field>
-                    <sui-checkbox label="Logout" />
-                  </sui-form-field>
-                  <sui-form-field>
-                    <sui-checkbox label="Create Folder" />
-                  </sui-form-field>
-                </sui-form-fields>
-                <sui-form-fields inline>
-                  <sui-form-field>
-                    <sui-checkbox label="Open File" />
-                  </sui-form-field>
-                  <sui-form-field>
-                    <sui-checkbox label="Delete File/Folder" />
-                  </sui-form-field>
-                </sui-form-fields>
-              </sui-segment>
+              <h4>Select events to include in the access log:</h4>
+              <sui-table>
+                <sui-table-body>
+                  <sui-table-row>
+                    <sui-table-cell>
+                      <sui-checkbox label="Login" />
+                    </sui-table-cell>
+                    <sui-table-cell>
+                      <sui-checkbox label="Create File" />
+                    </sui-table-cell>
+                  </sui-table-row>
+                  <sui-table-row>
+                    <sui-table-cell>
+                      <sui-checkbox label="Logout" />
+                    </sui-table-cell>
+                    <sui-table-cell>
+                      <sui-checkbox label="Create Folder" />
+                    </sui-table-cell>
+                  </sui-table-row>
+                  <sui-table-row>
+                    <sui-table-cell>
+                      <sui-checkbox label="Open File" />
+                    </sui-table-cell>
+                    <sui-table-cell>
+                      <sui-checkbox label="Delete File/Folder" />
+                    </sui-table-cell>
+                  </sui-table-row>
+                </sui-table-body>
+              </sui-table>
+
               <h4>Error Log</h4>
               <sui-form-fields inline>
                 <sui-form-field>
@@ -147,25 +150,27 @@
                   <span style="margin-left: 10px;">minutes(s)</span>
                 </sui-form-field>
               </sui-form-fields>
-              <sui-segment>
-                <h5>Except</h5>
-                <sui-form-fields inline>
-                  <sui-form-field>
-                    <sui-checkbox label="Guests" />
-                  </sui-form-field>
-                  <sui-form-field>
-                    <sui-checkbox label="Registered users" />
-                  </sui-form-field>
-                </sui-form-fields>
-                <sui-form-fields inline>
-                  <sui-form-field>
-                    <sui-checkbox label="Administrators" />
-                  </sui-form-field>
-                  <sui-form-field>
-                    <sui-checkbox label="Idle users who have open files" />
-                  </sui-form-field>
-                </sui-form-fields>
-              </sui-segment>
+              <h4>Except</h4>
+              <sui-table>
+                <sui-table-body>
+                  <sui-table-row>
+                    <sui-table-cell>
+                      <sui-checkbox label="Guests" />
+                    </sui-table-cell>
+                    <sui-table-cell>
+                      <sui-checkbox label="Registered users" />
+                    </sui-table-cell>
+                  </sui-table-row>
+                  <sui-table-row>
+                    <sui-table-cell>
+                      <sui-checkbox label="Administrators" />
+                    </sui-table-cell>
+                    <sui-table-cell>
+                      <sui-checkbox label="Idle users who have open files" />
+                    </sui-table-cell>
+                  </sui-table-row>
+                </sui-table-body>
+              </sui-table>
               <sui-form-field>
                 <label>Disconnect Message:</label>
                 <textarea rows="11"></textarea>

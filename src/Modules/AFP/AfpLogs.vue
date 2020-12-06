@@ -23,8 +23,14 @@
                 />
               </sui-form-field>
             </div>
-            <div></div>
+            <div>
+              <sui-form-field inline>
+                <label>Filter:</label>
+                <input type="text">
+              </sui-form-field>
+            </div>
           </div>
+          <p>/Library/Logs/AppleFileService/AppleFileService.log</p>
         </sui-form>
       </sui-grid-column>
     </sui-grid-row>

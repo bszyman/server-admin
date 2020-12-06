@@ -13,3 +13,17 @@
 .controlBar > div:nth-child(2) {
     text-align: right;
 }
+
+.ui.table thead tr:first-child > th {
+    position: sticky !important;
+    top: 0;
+    z-index: 2;
+    background-color: white;
+}
+
+.table-container {
+    height: 550px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+    border: 1px solid lightgray;
+}
