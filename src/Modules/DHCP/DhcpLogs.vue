@@ -11,6 +11,20 @@
           <sui-form-field>
             <textarea rows="31" readonly></textarea>
           </sui-form-field>
+
+          <div class="controlBar">
+            <div>
+              <p>/var/log/system.log</p>
+              <p>Note: filtering for "bootp"</p>
+            </div>
+            <div>
+              <sui-form-field inline>
+                <label>Filter</label>
+                <input type="text" />
+              </sui-form-field>
+            </div>
+          </div>
+
         </sui-form>
       </sui-grid-column>
     </sui-grid-row>
