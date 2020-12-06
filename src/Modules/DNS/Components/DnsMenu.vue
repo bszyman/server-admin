@@ -38,11 +38,11 @@ export default {
           pathName: "dns-log",
           id: 2
         },
-        {
-          name: "Activity",
-          pathName: "dns-activity",
-          id: 3
-        },
+        // {
+        //   name: "Activity",
+        //   pathName: "dns-activity",
+        //   id: 3
+        // },
         {
           name: "Settings",
           pathName: "dns-settings",

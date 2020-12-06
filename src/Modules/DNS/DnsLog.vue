@@ -11,6 +11,18 @@
           <sui-form-field>
             <textarea rows="31" readonly></textarea>
           </sui-form-field>
+
+          <div class="controlBar">
+            <div>
+              <p>/Library/Logs/named.log</p>
+            </div>
+            <div>
+              <sui-form-field inline>
+                <label>Filter</label>
+                <input type="text" />
+              </sui-form-field>
+            </div>
+          </div>
         </sui-form>
       </sui-grid-column>
     </sui-grid-row>

@@ -26,7 +26,7 @@
               </sui-table-row>
               <sui-table-row>
                 <sui-table-cell :width="8" text-align="right">DNS Version:</sui-table-cell>
-                <sui-table-cell :width="8"></sui-table-cell>
+                <sui-table-cell :width="8">Not available</sui-table-cell>
               </sui-table-row>
             </sui-table-body>
           </sui-table>
