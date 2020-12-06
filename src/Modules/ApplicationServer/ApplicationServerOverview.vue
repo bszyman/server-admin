@@ -18,15 +18,15 @@
             <sui-table-body>
               <sui-table-row>
                 <sui-table-cell :width="8" text-align="right">Configuration type:</sui-table-cell>
-                <sui-table-cell :width="8"></sui-table-cell>
+                <sui-table-cell :width="8">Not Available</sui-table-cell>
               </sui-table-row>
               <sui-table-row>
                 <sui-table-cell :width="8" text-align="right">JBoss version:</sui-table-cell>
-                <sui-table-cell :width="8"></sui-table-cell>
+                <sui-table-cell :width="8">Not Available</sui-table-cell>
               </sui-table-row>
               <sui-table-row>
                 <sui-table-cell :width="8" text-align="right">Tomcat version:</sui-table-cell>
-                <sui-table-cell :width="8"></sui-table-cell>
+                <sui-table-cell :width="8">Not Available</sui-table-cell>
               </sui-table-row>
             </sui-table-body>
           </sui-table>

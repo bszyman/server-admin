@@ -52,6 +52,8 @@
                     value="3"
                 />
               </sui-form-field>
+
+              <sui-button style="margin-top: 20px;">Manage JBoss...</sui-button>
             </sui-form>
           </sui-tab-pane>
           <sui-tab-pane title="Backup">
@@ -88,11 +90,16 @@ export default {
   name: "ApplicationServerSettings",
   components: {ApplicationServerMenu},
   data() {
-    const configuationNameOptions = [];
+    const configuationNameOptions = [
+      { key: "1", text: "default", value: 1},
+      { key: "2", text: "deploy-cluster", value: 2},
+      { key: "3", text: "deploy-standalone", value: 3},
+      { key: "4", text: "develop", value: 4}
+    ];
 
     return {
       configurationSetting: 1,
-      selectedConfigurationName: null,
+      selectedConfigurationName: 1,
       configuationNameOptions: configuationNameOptions,
     }
   }
