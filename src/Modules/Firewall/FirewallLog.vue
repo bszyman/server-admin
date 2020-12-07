@@ -18,6 +18,18 @@ Sep 29 10:15:38 localhost /usr/share/servermgrd/cgi-bin/servermgr_ipfilter: ipfw
 Sep 29 10:15:38 localhost /usr/share/servermgrd/cgi-bin/servermgr_ipfilter: ipfw config:Info:Finished applying local rules
             </textarea>
           </sui-form-field>
+
+          <div class="controlBar">
+            <div>
+              <p>/var/log/ipfw.log</p>
+            </div>
+            <div>
+              <sui-form-field inline>
+                <label>Filter</label>
+                <input type="text" />
+              </sui-form-field>
+            </div>
+          </div>
         </sui-form>
       </sui-grid-column>
     </sui-grid-row>
