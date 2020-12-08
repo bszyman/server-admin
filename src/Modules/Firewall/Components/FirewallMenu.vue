@@ -39,9 +39,14 @@ export default {
           id: 2
         },
         {
+          name: "Active Rules",
+          pathName: "fw-active-rules",
+          id: 3
+        },
+        {
           name: "Settings",
           pathName: "fw-settings",
-          id: 3
+          id: 4
         },
       ]
     }

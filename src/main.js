@@ -90,6 +90,7 @@ import WindowsLogs from "@/Modules/Windows/WindowsLogs";
 import WindowsConnections from "@/Modules/Windows/WindowsConnections";
 import WindowsGraphs from "@/Modules/Windows/WindowsGraphs";
 import WindowsSettings from "@/Modules/Windows/WindowsSettings";
+import FirewallActiveRules from "@/Modules/Firewall/FirewallActiveRules";
 
 Vue.config.productionTip = false
 
@@ -258,6 +259,11 @@ const router = new VueRouter({
           path: 'log',
           component: FirewallLog,
           name: "fw-log",
+        },
+        {
+          path: 'active-rules',
+          component: FirewallActiveRules,
+          name: "fw-active-rules",
         },
         {
           path: 'settings',
