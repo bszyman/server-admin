@@ -40,10 +40,6 @@
                 <input id="max-auth-user" type="number">
                 <span style="margin-left: 10px;">authenticated users</span>
               </sui-form-field>
-              <sui-form-field inline>
-                <label for="ftp-admin-email">FTP administrator email address</label>
-                <input id="ftp-admin-email" type="email">
-              </sui-form-field>
               <sui-form-field>
                 <sui-checkbox label="Enable anonymous access"/>
               </sui-form-field>
