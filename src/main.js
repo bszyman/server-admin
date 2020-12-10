@@ -63,7 +63,7 @@ import FtpGraph from "@/Modules/FTP/FtpGraph";
 import FtpSettings from "@/Modules/FTP/FtpSettings";
 import MailLogs from "@/Modules/Mail/MailLogs";
 import MailConnections from "@/Modules/Mail/MailConnections";
-import MailAccounts from "@/Modules/Mail/MailAccounts";
+import MailMaintenance from "@/Modules/Mail/MailMaintenance";
 import MailSettings from "@/Modules/Mail/MailSettings";
 import NatSettings from "@/Modules/NAT/NatSettings";
 import NetbootLogs from "@/Modules/NetBoot/NetbootLogs";
@@ -323,9 +323,9 @@ const router = new VueRouter({
           name: "mail-connections",
         },
         {
-          path: 'accounts',
-          component: MailAccounts,
-          name: "mail-accounts",
+          path: 'maintenance',
+          component: MailMaintenance,
+          name: "mail-maintenance",
         },
         {
           path: 'settings',

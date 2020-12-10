@@ -44,8 +44,8 @@ export default {
           id: 3
         },
         {
-          name: "Accounts",
-          pathName: "mail-accounts",
+          name: "Maintenance",
+          pathName: "mail-maintenance",
           id: 4
         },
         {
