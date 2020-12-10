@@ -106,6 +106,13 @@
             </sui-form>
           </sui-tab-pane>
         </sui-tab>
+        <div class="controlBar">
+          <div></div>
+          <div>
+            <sui-button>Revert</sui-button>
+            <sui-button positive>Save</sui-button>
+          </div>
+        </div>
       </sui-grid-column>
     </sui-grid-row>
   </sui-grid>
