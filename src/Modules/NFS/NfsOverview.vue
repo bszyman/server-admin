@@ -28,6 +28,14 @@
                 <sui-table-cell :width="8" text-align="right">portmap is:</sui-table-cell>
                 <sui-table-cell :width="8">Running</sui-table-cell>
               </sui-table-row>
+              <sui-table-row>
+                <sui-table-cell :width="8" text-align="right">rpc.locked is:</sui-table-cell>
+                <sui-table-cell :width="8">Running</sui-table-cell>
+              </sui-table-row>
+              <sui-table-row>
+                <sui-table-cell :width="8" text-align="right">rpc.statd is:</sui-table-cell>
+                <sui-table-cell :width="8">Running</sui-table-cell>
+              </sui-table-row>
             </sui-table-body>
           </sui-table>
         </div>
