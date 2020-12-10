@@ -10,16 +10,26 @@
         <sui-tab>
           <sui-tab-pane title="General">
             <sui-form>
-              <sui-form-field inline>
-                <label for="encoding-option">Encoding for older clients:</label>
-                <sui-dropdown
-                    id="encoding-option"
-                    placeholder="Authentication Method"
-                    selection
-                    :options="encodingTypes"
-                    v-model="selectedEncodingType"
-                />
-              </sui-form-field>
+              <sui-form-fields grouped>
+                <sui-form-field>
+                  <sui-checkbox radio name="ip_forwarding" label="IP Forwarding only" value="1" />
+                </sui-form-field>
+                <sui-form-field>
+                  <sui-checkbox radio name="ip_forwarding" label="IP Forwarding and Network Address Translation (NAT)" value="2" />
+                </sui-form-field>
+              </sui-form-fields>
+              <div style="margin-left: 50px;">
+                <sui-form-field inline>
+                  <label for="encoding-option">External network interface:</label>
+                  <sui-dropdown
+                      id="encoding-option"
+                      placeholder="Network Interface"
+                      selection
+                      :options="networkInterfaces"
+                      v-model="selectedNetworkInterface"
+                  />
+                </sui-form-field>
+              </div>
             </sui-form>
           </sui-tab-pane>
         </sui-tab>
@@ -34,13 +44,13 @@ export default {
   name: "NatSettings",
   components: {NatMenu},
   data() {
-    let encodingTypes = [
+    let networkInterfaces = [
       { text: "Built-in Ethernet", value: 1 }
     ];
 
     return {
-      encodingTypes: encodingTypes,
-      selectedEncodingType: 1
+      networkInterfaces: networkInterfaces,
+      selectedNetworkInterface: 1
     }
   }
 }
