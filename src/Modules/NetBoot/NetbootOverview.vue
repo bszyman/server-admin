@@ -14,22 +14,58 @@
         <sui-divider />
 
         <div style="margin-top: 40px; min-height: 500px;">
-          <sui-table compact basic="very">
+          <sui-table compact basic="very" style="margin-left: auto; margin-right: auto; max-width: 500px;">
+            <sui-table-header>
+              <sui-table-row>
+                <sui-table-header-cell>Image Type</sui-table-header-cell>
+                <sui-table-header-cell text-align="center">Enabled</sui-table-header-cell>
+                <sui-table-header-cell text-align="center">AFP</sui-table-header-cell>
+                <sui-table-header-cell text-align="center">NFS</sui-table-header-cell>
+                <sui-table-header-cell text-align="center">HTTP</sui-table-header-cell>
+                <sui-table-header-cell text-align="center">DHCP</sui-table-header-cell>
+              </sui-table-row>
+            </sui-table-header>
             <sui-table-body>
               <sui-table-row>
-                <sui-table-cell :width="8" text-align="right">DHCP:</sui-table-cell>
-                <sui-table-cell :width="8">Stopped</sui-table-cell>
+                <sui-table-cell>NetBoot Mac OS X</sui-table-cell>
+                <sui-table-cell text-align="center">No</sui-table-cell>
+                <sui-table-cell text-align="center"></sui-table-cell>
+                <sui-table-cell text-align="center"></sui-table-cell>
+                <sui-table-cell text-align="center"></sui-table-cell>
+                <sui-table-cell text-align="center"></sui-table-cell>
               </sui-table-row>
               <sui-table-row>
-                <sui-table-cell :width="8" text-align="right">NFS:</sui-table-cell>
-                <sui-table-cell :width="8">Stopped</sui-table-cell>
+                <sui-table-cell>NetBoot Mac OS X (diskless)</sui-table-cell>
+                <sui-table-cell text-align="center">No</sui-table-cell>
+                <sui-table-cell text-align="center"></sui-table-cell>
+                <sui-table-cell text-align="center"></sui-table-cell>
+                <sui-table-cell text-align="center"></sui-table-cell>
+                <sui-table-cell text-align="center"></sui-table-cell>
               </sui-table-row>
               <sui-table-row>
-                <sui-table-cell :width="8" text-align="right">AFP:</sui-table-cell>
-                <sui-table-cell :width="8">Running</sui-table-cell>
+                <sui-table-cell>Network Install Mac OS X</sui-table-cell>
+                <sui-table-cell text-align="center">No</sui-table-cell>
+                <sui-table-cell text-align="center"></sui-table-cell>
+                <sui-table-cell text-align="center"></sui-table-cell>
+                <sui-table-cell text-align="center"></sui-table-cell>
+                <sui-table-cell text-align="center"></sui-table-cell>
+              </sui-table-row>
+              <sui-table-row>
+                <sui-table-cell>NetBoot Mac OS 9</sui-table-cell>
+                <sui-table-cell text-align="center">No</sui-table-cell>
+                <sui-table-cell text-align="center"></sui-table-cell>
+                <sui-table-cell text-align="center"></sui-table-cell>
+                <sui-table-cell text-align="center"></sui-table-cell>
+                <sui-table-cell text-align="center"></sui-table-cell>
               </sui-table-row>
             </sui-table-body>
           </sui-table>
+
+          <p style="margin-left: auto; margin-right: auto; max-width: 500px;">
+            Mac OS X diskless NetBoot and Mac OS 9 images require AFP. Mac OS X
+            images require either HTTP or NFS. DHCP is required only if this server
+            assigns IP addresses.
+          </p>
         </div>
 
         <sui-divider />
