@@ -39,9 +39,14 @@ export default {
           id: 2
         },
         {
+          name: "Archive",
+          pathName: "od-archive",
+          id: 3
+        },
+        {
           name: "Settings",
           pathName: "od-settings",
-          id: 3
+          id: 4
         },
       ]
     }

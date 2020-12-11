@@ -91,6 +91,7 @@ import WindowsConnections from "@/Modules/Windows/WindowsConnections";
 import WindowsGraphs from "@/Modules/Windows/WindowsGraphs";
 import WindowsSettings from "@/Modules/Windows/WindowsSettings";
 import FirewallActiveRules from "@/Modules/Firewall/FirewallActiveRules";
+import OpenDirectoryArchive from "@/Modules/OpenDirectory/OpenDirectoryArchive";
 
 Vue.config.productionTip = false
 
@@ -405,6 +406,11 @@ const router = new VueRouter({
           path: 'log',
           component: OpenDirectoryLog,
           name: "od-log",
+        },
+        {
+          path: "archive",
+          component: OpenDirectoryArchive,
+          name: "od-archive"
         },
         {
           path: 'settings',
