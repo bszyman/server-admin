@@ -22,8 +22,14 @@
                     v-model="selectedLogType"
                 />
               </sui-form-field>
+              <p>/Library/Logs/PrintService/PrintService_admin.log</p>
             </div>
-            <div></div>
+            <div>
+              <sui-form-field inline>
+                <label>Filter</label>
+                <input type="text" />
+              </sui-form-field>
+            </div>
           </div>
         </sui-form>
       </sui-grid-column>
@@ -38,11 +44,10 @@ export default {
   components: {PrintMenu},
   data() {
     const logTypeOptions = [
-      {
-        key: 1,
-        text: "Print Service Log",
-        value: 1
-      },
+      { key: 1, text: "Print Service Log", value: 1 },
+      { key: 2, text: "Error Log", value: 2 },
+      { key: 3, text: "Access Log", value: 3 },
+      { key: 4, text: "Page Log", value: 4 },
     ];
 
     return {

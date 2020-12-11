@@ -44,41 +44,13 @@ export default {
   components: {OpenDirectoryMenu},
   data() {
     const logTypeOptions = [
-      {
-        key: 1,
-        text: "Directory Services Server Log",
-        value: 1
-      },
-      {
-        key: 2,
-        text: "Directory Services Error Log",
-        value: 2
-      },
-      {
-        key: 3,
-        text: "Lookup Log",
-        value: 3
-      },
-      {
-        key: 4,
-        text: "NetInfo Log",
-        value: 4
-      },
-      {
-        key: 5,
-        text: "LDAP Log",
-        value: 5
-      },
-      {
-        key: 6,
-        text: "Password Service Server Log",
-        value: 6
-      },
-      {
-        key: 7,
-        text: "Password Service Error Log",
-        value: 7
-      },
+      { key: 1, text: "Directory Services Server Log", value: 1 },
+      { key: 2, text: "Directory Services Error Log", value: 2 },
+      { key: 3, text: "Lookup Log", value: 3 },
+      { key: 4, text: "NetInfo Log", value: 4 },
+      { key: 5, text: "LDAP Log", value: 5 },
+      { key: 6, text: "Password Service Server Log", value: 6 },
+      { key: 7, text: "Password Service Error Log", value: 7 },
     ];
 
     return {

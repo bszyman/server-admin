@@ -7,7 +7,29 @@
     </sui-grid-row>
     <sui-grid-row>
       <sui-grid-column :width="16">
-        <sui-segment></sui-segment>
+        <div class="table-container">
+          <sui-table compact selectable padded basic="very">
+            <sui-table-header>
+              <sui-table-row>
+                <sui-table-header-cell>Name</sui-table-header-cell>
+                <sui-table-header-cell>Jobs</sui-table-header-cell>
+                <sui-table-header-cell>Status</sui-table-header-cell>
+                <sui-table-header-cell>Shared via</sui-table-header-cell>
+                <sui-table-header-cell>Kind</sui-table-header-cell>
+              </sui-table-row>
+            </sui-table-header>
+            <sui-table-body>
+              <sui-table-row v-for="q in queues" :key="q.id">
+                <sui-table-cell>{{ q.name }}</sui-table-cell>
+                <sui-table-cell>{{ q.jobs }}</sui-table-cell>
+                <sui-table-cell>{{ q.status }}</sui-table-cell>
+                <sui-table-cell>{{ q.sharedVia }}</sui-table-cell>
+                <sui-table-cell>{{ q.kind }}</sui-table-cell>
+              </sui-table-row>
+            </sui-table-body>
+          </sui-table>
+        </div>
+
         <div class="controlBar">
           <div>
             <p>Number of queues: 0</p>
@@ -28,7 +50,12 @@
 import PrintMenu from "@/Modules/Print/Components/PrintMenu";
 export default {
   name: "PrintQueues",
-  components: {PrintMenu}
+  components: {PrintMenu},
+  data() {
+    return {
+      queues: [],
+    }
+  }
 }
 </script>
 

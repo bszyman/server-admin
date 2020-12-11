@@ -20,7 +20,30 @@
 
           <p>Queue Status: Not available</p>
 
-          <sui-segment></sui-segment>
+          <div class="table-container">
+            <sui-table compact selectable padded basic="very">
+              <sui-table-header>
+                <sui-table-row>
+                  <sui-table-header-cell>ID</sui-table-header-cell>
+                  <sui-table-header-cell>User</sui-table-header-cell>
+                  <sui-table-header-cell>Job Name</sui-table-header-cell>
+                  <sui-table-header-cell>Pages</sui-table-header-cell>
+                  <sui-table-header-cell>Sheets</sui-table-header-cell>
+                  <sui-table-header-cell>Status</sui-table-header-cell>
+                </sui-table-row>
+              </sui-table-header>
+              <sui-table-body>
+                <sui-table-row v-for="job in jobs" :key="job.id">
+                  <sui-table-cell>{{ job.id }}</sui-table-cell>
+                  <sui-table-cell>{{ job.user }}</sui-table-cell>
+                  <sui-table-cell>{{ job.jobName }}</sui-table-cell>
+                  <sui-table-cell>{{ job.pages }}</sui-table-cell>
+                  <sui-table-cell>{{ job.sheets }}</sui-table-cell>
+                  <sui-table-cell>{{ job.status }}</sui-table-cell>
+                </sui-table-row>
+              </sui-table-body>
+            </sui-table>
+          </div>
           <div class="controlBar">
             <div></div>
             <div>
@@ -46,6 +69,7 @@ export default {
     let queueOptions = [];
 
     return {
+      jobs: [],
       queueOptions: queueOptions,
       selectedQueueOption: null,
     }
