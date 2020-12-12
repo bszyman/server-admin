@@ -3,7 +3,7 @@
     <sui-grid :columns="2">
       <sui-grid-row>
         <sui-grid-column :width="4">
-          <ServiceNavigator selectedService="WebObjects" />
+          <ServiceNavigator selectedService="Web Objects" />
         </sui-grid-column>
         <sui-grid-column :width="12">
           <div style="min-height: 750px;">
