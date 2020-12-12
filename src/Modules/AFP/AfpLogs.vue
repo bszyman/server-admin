@@ -22,6 +22,7 @@
                     v-model="selectedLogType"
                 />
               </sui-form-field>
+              <p>/Library/Logs/AppleFileService/AppleFileService.log</p>
             </div>
             <div>
               <sui-form-field inline>
@@ -30,7 +31,6 @@
               </sui-form-field>
             </div>
           </div>
-          <p>/Library/Logs/AppleFileService/AppleFileService.log</p>
         </sui-form>
       </sui-grid-column>
     </sui-grid-row>

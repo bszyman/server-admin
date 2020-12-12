@@ -53,6 +53,19 @@
                   <input type="number" />
                 </sui-form-field>
               </sui-form-fields>
+
+              <sui-form-fields grouped>
+                <label for="access_authentication">Client connections:</label>
+                <sui-form-field>
+                  <sui-checkbox name="access_authentication" label="NTLMv2 & Kerberos" value="1" />
+                </sui-form-field>
+                <sui-form-field>
+                  <sui-checkbox name="access_authentication" label="NTML" value="2" />
+                </sui-form-field>
+                <sui-form-field>
+                  <sui-checkbox name="access_authentication" label="LAN Manager" value="3" />
+                </sui-form-field>
+              </sui-form-fields>
             </sui-form>
           </sui-tab-pane>
           <sui-tab-pane title="Logging">
@@ -130,7 +143,8 @@ export default {
     const serverRoles = [
       { text: "Standalone Server", value: 1 },
       { text: "Domain Member", value: 2},
-      { text: "Primary Domain Controller", value: 3},
+      { text: "Primary Domain Controller (PDC)", value: 3},
+      { text: "Backup Domain Controller (BDC)", value: 4},
     ];
 
     const logDetailOptions = [
