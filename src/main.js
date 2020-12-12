@@ -92,6 +92,7 @@ import WindowsGraphs from "@/Modules/Windows/WindowsGraphs";
 import WindowsSettings from "@/Modules/Windows/WindowsSettings";
 import FirewallActiveRules from "@/Modules/Firewall/FirewallActiveRules";
 import OpenDirectoryArchive from "@/Modules/OpenDirectory/OpenDirectoryArchive";
+import WebSettingsSiteEditor from "@/Modules/Web/WebSettingsSiteEditor";
 
 Vue.config.productionTip = false
 
@@ -530,6 +531,11 @@ const router = new VueRouter({
           path: 'settings',
           component: WebSettings,
           name: "web-settings",
+        },
+        {
+          path: 'settings/site/:siteID/',
+          component: WebSettingsSiteEditor,
+          name: "web-site-editor",
         },
       ]
     },
