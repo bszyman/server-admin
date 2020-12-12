@@ -93,6 +93,9 @@ import WindowsSettings from "@/Modules/Windows/WindowsSettings";
 import FirewallActiveRules from "@/Modules/Firewall/FirewallActiveRules";
 import OpenDirectoryArchive from "@/Modules/OpenDirectory/OpenDirectoryArchive";
 import WebSettingsSiteEditor from "@/Modules/Web/WebSettingsSiteEditor";
+import WebObjects from "@/Modules/WebObjects/WebObjects";
+import WebObjectsOverview from "@/Modules/WebObjects/WebObjectsOverview";
+import WebObjectsSettings from "@/Modules/WebObjects/WebObjectsSettings";
 
 Vue.config.productionTip = false
 
@@ -536,6 +539,22 @@ const router = new VueRouter({
           path: 'settings/site/:siteID/',
           component: WebSettingsSiteEditor,
           name: "web-site-editor",
+        },
+      ]
+    },
+    {
+      path: '/web-objects',
+      component: WebObjects,
+      children: [
+        {
+          path: '',
+          component: WebObjectsOverview,
+          name: "wo-overview",
+        },
+        {
+          path: 'settings',
+          component: WebObjectsSettings,
+          name: "wo-settings",
         },
       ]
     },

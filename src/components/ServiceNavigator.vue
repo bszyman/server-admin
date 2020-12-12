@@ -115,10 +115,16 @@ export default {
           id: 16
         },
         {
+          name: "Web Objects",
+          path: "/web-objects",
+          pathName: "wo-overview",
+          id: 17
+        },
+        {
           name: "Windows",
           path: "/windows",
           pathName: "win-overview",
-          id: 17
+          id: 18
         },
       ]
     }
