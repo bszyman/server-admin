@@ -104,6 +104,10 @@ import Xgrid from "@/Modules/Xgrid/Xgrid";
 import XgridOverview from "@/Modules/Xgrid/XgridOverview";
 import XgridLog from "@/Modules/Xgrid/XgridLog";
 import XgridSettings from "@/Modules/Xgrid/XgridSettings";
+import SoftwareUpdate from "@/Modules/SoftwareUpdate/SoftwareUpdate";
+import SoftwareUpdateOverview from "@/Modules/SoftwareUpdate/SoftwareUpdateOverview";
+import SoftwareUpdateLog from "@/Modules/SoftwareUpdate/SoftwareUpdateLog";
+import SoftwareUpdateSettings from "@/Modules/SoftwareUpdate/SoftwareUpdateSettings";
 
 Vue.config.productionTip = false
 
@@ -511,6 +515,27 @@ const router = new VueRouter({
           path: 'settings',
           component: QtssSettings,
           name: "qtss-settings",
+        },
+      ]
+    },
+    {
+      path: '/software-update',
+      component: SoftwareUpdate,
+      children: [
+        {
+          path: '',
+          component: SoftwareUpdateOverview,
+          name: "su-overview",
+        },
+        {
+          path: 'log',
+          component: SoftwareUpdateLog,
+          name: "su-log",
+        },
+        {
+          path: 'settings',
+          component: SoftwareUpdateSettings,
+          name: "su-settings",
         },
       ]
     },
