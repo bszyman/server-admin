@@ -32,18 +32,17 @@
                   <sui-checkbox label="Allow incoming mail" />
                 </sui-form-field>
 
-                <sui-table basic="very" compact>
-                  <sui-table-body>
-                    <sui-table-row>
-                      <sui-table-cell text-align="right"><label>Domain name:</label></sui-table-cell>
-                      <sui-table-cell><input /> <p>Enter the local internet domain name.</p></sui-table-cell>
-                    </sui-table-row>
-                    <sui-table-row>
-                      <sui-table-cell text-align="right"><label>Host name:</label></sui-table-cell>
-                      <sui-table-cell><input /> <p>Enter the internet host name of this mail system.</p></sui-table-cell>
-                    </sui-table-row>
-                  </sui-table-body>
-                </sui-table>
+                <sui-form-field>
+                  <label>Domain name:</label>
+                  <input type="text" />
+                  <p>Enter the local internet domain name.</p>
+                </sui-form-field>
+
+                <sui-form-field>
+                  <label>Host name:</label>
+                  <input type="text" />
+                  <p>Enter the internet host name of this mail system.</p>
+                </sui-form-field>
 
                 <sui-form-field>
                   <sui-checkbox label="Hold outgoing mail" />
@@ -68,7 +67,15 @@
               <sui-form-field>
                 <sui-checkbox label="Accept SMTP relays only from these hosts and networks:" />
               </sui-form-field>
-              <sui-segment></sui-segment>
+              <div class="table-container" style="height: 175px;">
+                <sui-table compact selectable padded basic="very">
+                  <sui-table-body>
+                    <sui-table-row v-for="r in relays" :key="r.id">
+                      <sui-table-cell>{{ r.ipAddressBlock }}</sui-table-cell>
+                    </sui-table-row>
+                  </sui-table-body>
+                </sui-table>
+              </div>
               <div is="sui-button-group" style="margin-bottom: 15px;">
                 <sui-button icon="plus" compact />
                 <sui-button icon="minus" compact />
@@ -78,7 +85,15 @@
               <sui-form-field>
                 <sui-checkbox label="Refuse all messages from these hosts and networks:" />
               </sui-form-field>
-              <sui-segment></sui-segment>
+              <div class="table-container" style="height: 175px;">
+                <sui-table compact selectable padded basic="very">
+                  <sui-table-body>
+                    <sui-table-row v-for="r in refuseHosts" :key="r.id">
+                      <sui-table-cell>{{ r.ipAddressBlock }}</sui-table-cell>
+                    </sui-table-row>
+                  </sui-table-body>
+                </sui-table>
+              </div>
               <div is="sui-button-group" style="margin-bottom: 15px;">
                 <sui-button icon="plus" compact />
                 <sui-button icon="minus" compact />
@@ -88,7 +103,15 @@
               <sui-form-field>
                 <sui-checkbox label="Use these junk mail rejection servers (real-time blacklist):" />
               </sui-form-field>
-              <sui-segment></sui-segment>
+              <div class="table-container" style="height: 175px;">
+                <sui-table compact selectable padded basic="very">
+                  <sui-table-body>
+                    <sui-table-row v-for="x in blacklists" :key="x.id">
+                      <sui-table-cell>{{ x.server }}</sui-table-cell>
+                    </sui-table-row>
+                  </sui-table-body>
+                </sui-table>
+              </div>
               <div is="sui-button-group" style="margin-bottom: 15px;">
                 <sui-button icon="plus" compact />
                 <sui-button icon="minus" compact />
@@ -188,7 +211,14 @@
               <div style="margin-left: 50px;">
                 <sui-form-field>
                   <label>Over quota error message:</label>
-                  <input type="text" /> <sui-button icon="alternate pencil" />
+                  <div style="display: flex;">
+                    <div style="flex: 9;">
+                      <input type="text" />
+                    </div>
+                    <div style="flex: 1; text-align: center;">
+                      <sui-button icon="alternate pencil" compact style="margin-left: 10px;" />
+                    </div>
+                  </div>
                 </sui-form-field>
               </div>
 
@@ -198,7 +228,14 @@
               <div style="margin-left: 50px;">
                 <sui-form-field>
                   <label>Quota warning message:</label>
-                  <input type="text" /> <sui-button icon="alternate pencil" />
+                  <div style="display: flex;">
+                    <div style="flex: 9;">
+                      <input type="text" />
+                    </div>
+                    <div style="flex: 1; text-align: center;">
+                      <sui-button icon="alternate pencil" compact style="margin-left: 10px;" />
+                    </div>
+                  </div>
                 </sui-form-field>
                 <sui-form-field inline>
                   <label>Send quota warnings when usage exceeds</label>
@@ -221,18 +258,56 @@
 
                 <sui-grid :columns="2">
                   <sui-grid-row>
-                    <sui-grid-column>
+                    <sui-grid-column :width="4">
                       <h4>Lists</h4>
-                      <sui-segment></sui-segment>
+                      <div class="table-container" style="height: 550px; margin-top: 20px;">
+                        <sui-table compact selectable padded basic="very">
+                          <sui-table-header>
+                            <sui-table-row>
+                              <sui-table-header-cell>List Name</sui-table-header-cell>
+                            </sui-table-row>
+                          </sui-table-header>
+                          <sui-table-body>
+                            <sui-table-row v-for="l in mailingListLists" :key="l.id">
+                              <sui-table-cell>{{ l.listName }}</sui-table-cell>
+                            </sui-table-row>
+                          </sui-table-body>
+                        </sui-table>
+                      </div>
                       <div is="sui-button-group" style="margin-bottom: 15px;">
                         <sui-button icon="plus" compact />
                         <sui-button icon="minus" compact />
                         <sui-button icon="pencil alternate" compact />
                       </div>
                     </sui-grid-column>
-                    <sui-grid-column>
+                    <sui-grid-column :width="12">
                       <h4>Members</h4>
-                      <sui-segment></sui-segment>
+                      <div class="table-container" style="height: 550px; margin-top: 20px;">
+                        <sui-table compact selectable padded basic="very">
+                          <sui-table-header>
+                            <sui-table-row>
+                              <sui-table-header-cell :width="10">Email Address</sui-table-header-cell>
+                              <sui-table-header-cell :width="2" text-align="center">Subscribe</sui-table-header-cell>
+                              <sui-table-header-cell :width="2" text-align="center">Post</sui-table-header-cell>
+                              <sui-table-header-cell :width="2" text-align="center">Admin</sui-table-header-cell>
+                            </sui-table-row>
+                          </sui-table-header>
+                          <sui-table-body>
+                            <sui-table-row v-for="m in mailingListMembers" :key="m.id">
+                              <sui-table-header :width="10">{{ m.emailAddress }}</sui-table-header>
+                              <sui-table-header :width="2" text-align="center">
+                                <sui-checkbox label="" v-model="m.subscribe" />
+                              </sui-table-header>
+                              <sui-table-header :width="2" text-align="center">
+                                <sui-checkbox label="" v-model="m.post" />
+                              </sui-table-header>
+                              <sui-table-header :width="2" text-align="center">
+                                <sui-checkbox label="" v-model="m.admin" />
+                              </sui-table-header>
+                            </sui-table-row>
+                          </sui-table-body>
+                        </sui-table>
+                      </div>
 
                       <div class="controlBar">
                         <div>
@@ -616,6 +691,11 @@ export default {
     const domains = [];
     const partitions = [];
 
+    const relays = [
+      {id: 1, ipAddressBlock: "127.0.0.1/32"},
+      {id: 2, ipAddressBlock: "10.0.2.15/32"},
+    ]
+
     return {
       selectedSMTPLogDetailLevel: 6,
       smtpLogDetailOptions: smtpLogDetailOptions,
@@ -637,7 +717,12 @@ export default {
       selectedIMAPPOPSSLConfiguration: null,
       aliases: aliases,
       domains: domains,
-      partitions: partitions
+      partitions: partitions,
+      relays: relays,
+      refuseHosts: [],
+      blacklists: [],
+      mailingListLists: [],
+      mailingListMembers: []
     }
   }
 }
