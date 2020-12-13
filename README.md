@@ -1,11 +1,29 @@
 # Server Admin
 
+>User-friendly server administration, for
+> what's left of us.
+
 ## About This Project
 
-We're recreating the late, the great Mac OS X 
-Server Admin, and we're doing it on using modern
-web technologies. In this case, it happens to be
-VueJS and the Semantic UI-VueJS bindings.
+Are you tired of PaaS startups rehashing old
+ideas that used to be implemented for free
+in the open source world?
+
+Maybe you just like running your own server(s)?
+
+We'll you're in luck because we are replicating 
+the late, the great Mac OS X Server Admin application, 
+and we're doing it on using modern web technologies. 
+In this case, it happens to be VueJS and the Semantic 
+UI-VueJS bindings _(you're welcome)._
+
+I fear not many of you will care or appreciate this
+undertaking, and that's completely alright by me. Heck,
+not even Apple cares about Mac OS X Server anymore. Still
+yet, some of us are delusional enough to believe.
+
+Server Admin - server administration for 
+_what's left of us._
 
 ## Project setup
 ```
