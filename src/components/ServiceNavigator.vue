@@ -132,6 +132,12 @@ export default {
           pathName: "win-overview",
           id: 19
         },
+        {
+          name: "Xgrid",
+          path: "/xgrid",
+          pathName: "xg-overview",
+          id: 20
+        },
       ]
     }
   },

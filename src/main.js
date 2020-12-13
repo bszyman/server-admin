@@ -100,6 +100,10 @@ import Chat from "@/Modules/Chat/Chat";
 import ChatOverview from "@/Modules/Chat/ChatOverview";
 import ChatLogs from "@/Modules/Chat/ChatLogs";
 import ChatSettings from "@/Modules/Chat/ChatSettings";
+import Xgrid from "@/Modules/Xgrid/Xgrid";
+import XgridOverview from "@/Modules/Xgrid/XgridOverview";
+import XgridLog from "@/Modules/Xgrid/XgridLog";
+import XgridSettings from "@/Modules/Xgrid/XgridSettings";
 
 Vue.config.productionTip = false
 
@@ -611,6 +615,27 @@ const router = new VueRouter({
           path: 'settings',
           component: WindowsSettings,
           name: "win-settings",
+        },
+      ]
+    },
+    {
+      path: '/xgrid',
+      component: Xgrid,
+      children: [
+        {
+          path: '',
+          component: XgridOverview,
+          name: "xg-overview",
+        },
+        {
+          path: 'log',
+          component: XgridLog,
+          name: "xg-log",
+        },
+        {
+          path: 'settings',
+          component: XgridSettings,
+          name: "xg-settings",
         },
       ]
     },
