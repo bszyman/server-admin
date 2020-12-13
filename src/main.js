@@ -96,6 +96,10 @@ import WebSettingsSiteEditor from "@/Modules/Web/WebSettingsSiteEditor";
 import WebObjects from "@/Modules/WebObjects/WebObjects";
 import WebObjectsOverview from "@/Modules/WebObjects/WebObjectsOverview";
 import WebObjectsSettings from "@/Modules/WebObjects/WebObjectsSettings";
+import Chat from "@/Modules/Chat/Chat";
+import ChatOverview from "@/Modules/Chat/ChatOverview";
+import ChatLogs from "@/Modules/Chat/ChatLogs";
+import ChatSettings from "@/Modules/Chat/ChatSettings";
 
 Vue.config.productionTip = false
 
@@ -196,6 +200,27 @@ const router = new VueRouter({
           path: 'settings',
           component: ApplicationServerSettings,
           name: "as-settings",
+        },
+      ]
+    },
+    {
+      path: '/chat',
+      component: Chat,
+      children: [
+        {
+          path: '',
+          component: ChatOverview,
+          name: "chat-overview",
+        },
+        {
+          path: 'log',
+          component: ChatLogs,
+          name: "chat-log",
+        },
+        {
+          path: 'settings',
+          component: ChatSettings,
+          name: "chat-settings",
         },
       ]
     },
