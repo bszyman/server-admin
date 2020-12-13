@@ -13,7 +13,7 @@
               <sui-table compact selectable padded basic="very">
                 <sui-table-header>
                   <sui-table-row>
-                    <sui-table-header-cell>Enable</sui-table-header-cell>
+                    <sui-table-header-cell :width="2" text-align="center">Enable</sui-table-header-cell>
                     <sui-table-header-cell>Interface</sui-table-header-cell>
                     <sui-table-header-cell>Starting Address</sui-table-header-cell>
                     <sui-table-header-cell>Ending Address</sui-table-header-cell>
@@ -22,11 +22,17 @@
                 </sui-table-header>
                 <sui-table-body>
                   <sui-table-row v-for="subnet in subnets" :key="subnet.id">
-                    <sui-table-cell>{{ subnet.enable }}</sui-table-cell>
+                    <sui-table-cell :width="2" text-align="center">
+                      <sui-checkbox label="" v-model="subnet.enable" />
+                    </sui-table-cell>
                     <sui-table-cell>{{ subnet.interface }}</sui-table-cell>
                     <sui-table-cell>{{ subnet.startingAddress }}</sui-table-cell>
                     <sui-table-cell>{{ subnet.endingAddress }}</sui-table-cell>
-                    <sui-table-cell>{{ subnet.name }}</sui-table-cell>
+                    <sui-table-cell>
+                      <router-link :to="{name: 'dhcp-subnet-editor', params: {subnetID: 1}}">
+                        {{ subnet.name }}
+                      </router-link>
+                    </sui-table-cell>
                   </sui-table-row>
                 </sui-table-body>
               </sui-table>
@@ -114,7 +120,7 @@ export default {
     for(let x = 0; x < 30; x += 1) {
       subnets.push({
         id: (x + 1),
-        enable: "Yes",
+        enable: true,
         interface: "en01",
         startingAddress: "192.168.1.100",
         endingAddress: "192.168.1.200",

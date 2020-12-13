@@ -108,6 +108,7 @@ import SoftwareUpdate from "@/Modules/SoftwareUpdate/SoftwareUpdate";
 import SoftwareUpdateOverview from "@/Modules/SoftwareUpdate/SoftwareUpdateOverview";
 import SoftwareUpdateLog from "@/Modules/SoftwareUpdate/SoftwareUpdateLog";
 import SoftwareUpdateSettings from "@/Modules/SoftwareUpdate/SoftwareUpdateSettings";
+import DhcpSettingsSubnetEditor from "@/Modules/DHCP/DhcpSettingsSubnetEditor";
 
 Vue.config.productionTip = false
 
@@ -255,6 +256,11 @@ const router = new VueRouter({
           path: 'settings',
           component: DhcpSettings,
           name: "dhcp-settings",
+        },
+        {
+          path: 'settings/subnet/:subnetID/',
+          component: DhcpSettingsSubnetEditor,
+          name: "dhcp-subnet-editor",
         },
       ]
     },
