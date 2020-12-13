@@ -14,16 +14,19 @@ Maybe you just like running your own server(s)?
 We'll you're in luck because we are replicating 
 the late, the great Mac OS X Server Admin application, 
 and we're doing it on using modern web technologies. 
-In this case, it happens to be VueJS and the Semantic 
-UI-VueJS bindings _(you're welcome)._
+In this case, it happens to be VueJS, Semantic 
+UI-VueJS bindings, and Python + FastAPI. All great
+technologies _(you're welcome)._
 
-I fear not many of you will care or appreciate this
+I anticipate that not many of you will care or appreciate this
 undertaking, and that's completely alright by me. Heck,
 not even Apple cares about Mac OS X Server anymore. Still
 yet, some of us are delusional enough to believe.
 
-Server Admin - server administration for 
+Server Admin - Server administration for 
 _what's left of us._
+
+[Live Demo](https://server-admin.classicmacfinder.com)
 
 ## Project setup
 ```

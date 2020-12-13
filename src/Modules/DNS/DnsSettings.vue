@@ -30,7 +30,11 @@
                 </sui-table-header>
                 <sui-table-body>
                   <sui-table-row v-for="zone in zones" :key="zone.id">
-                    <sui-table-cell>{{ zone.name }}</sui-table-cell>
+                    <sui-table-cell>
+                      <router-link :to="{name: 'dns-zone-editor', params: {zoneID: 1}}">
+                        {{ zone.name }}
+                      </router-link>
+                    </sui-table-cell>
                     <sui-table-cell>{{ zone.primaryNameServer }}</sui-table-cell>
                     <sui-table-cell>{{ zone.primaryNameServerAddress }}</sui-table-cell>
                   </sui-table-row>

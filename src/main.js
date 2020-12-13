@@ -109,6 +109,7 @@ import SoftwareUpdateOverview from "@/Modules/SoftwareUpdate/SoftwareUpdateOverv
 import SoftwareUpdateLog from "@/Modules/SoftwareUpdate/SoftwareUpdateLog";
 import SoftwareUpdateSettings from "@/Modules/SoftwareUpdate/SoftwareUpdateSettings";
 import DhcpSettingsSubnetEditor from "@/Modules/DHCP/DhcpSettingsSubnetEditor";
+import DnsSettingsZoneEditor from "@/Modules/DNS/DnsSettingsZoneEditor";
 
 Vue.config.productionTip = false
 
@@ -287,6 +288,11 @@ const router = new VueRouter({
           path: 'settings',
           component: DnsSettings,
           name: "dns-settings",
+        },
+        {
+          path: 'settings/zone/:zoneID/',
+          component: DnsSettingsZoneEditor,
+          name: "dns-zone-editor",
         },
       ]
     },
