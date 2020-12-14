@@ -1,117 +1,122 @@
 <template>
-  <sui-grid>
-    <sui-grid-row>
-      <sui-grid-column :width="16">
-        <DnsMenu selected-section="Settings" />
-      </sui-grid-column>
-    </sui-grid-row>
-    <sui-grid-row>
-      <sui-grid-column :width="16">
-        <sui-tab>
-          <sui-tab-pane title="General">
-            <sui-form>
-              <sui-form-field>
-                <sui-checkbox label="Allow Zone Transfers" />
-              </sui-form-field>
-              <sui-form-field>
-                <sui-checkbox label="Allow Recursion" />
-              </sui-form-field>
-            </sui-form>
-          </sui-tab-pane>
-          <sui-tab-pane title="Zones">
-            <div class="table-container">
-              <sui-table compact selectable padded basic="very">
-                <sui-table-header>
-                  <sui-table-row>
-                    <sui-table-header-cell>Name</sui-table-header-cell>
-                    <sui-table-header-cell>Primary Name Server</sui-table-header-cell>
-                    <sui-table-header-cell>Primary Name Server Address</sui-table-header-cell>
-                  </sui-table-row>
-                </sui-table-header>
-                <sui-table-body>
-                  <sui-table-row v-for="zone in zones" :key="zone.id">
-                    <sui-table-cell>
-                      <router-link :to="{name: 'dns-zone-editor', params: {zoneID: 1}}">
-                        {{ zone.name }}
-                      </router-link>
-                    </sui-table-cell>
-                    <sui-table-cell>{{ zone.primaryNameServer }}</sui-table-cell>
-                    <sui-table-cell>{{ zone.primaryNameServerAddress }}</sui-table-cell>
-                  </sui-table-row>
-                </sui-table-body>
-              </sui-table>
-            </div>
+  <div>
+    <DnsSecondaryZoneEditorPop :open="secondaryZoneEditorOpen" />
 
-            <div is="sui-button-group">
-              <sui-button icon="plus" compact />
-              <sui-button icon="copy" compact />
-              <sui-button icon="minus" compact />
-              <sui-button icon="pencil alternate" compact />
-            </div>
-          </sui-tab-pane>
-          <sui-tab-pane title="Secondary Zones">
-            <div class="table-container">
-              <sui-table compact selectable padded basic="very">
-                <sui-table-header>
-                  <sui-table-row>
-                    <sui-table-header-cell>Zone Name</sui-table-header-cell>
-                    <sui-table-header-cell>Primaries</sui-table-header-cell>
-                  </sui-table-row>
-                </sui-table-header>
-                <sui-table-body>
-                  <sui-table-row v-for="zone in seconaryZones" :key="zone.id">
-                    <sui-table-cell>{{ zone.name }}</sui-table-cell>
-                    <sui-table-cell>{{ zone.primaryNameServer }}</sui-table-cell>
-                  </sui-table-row>
-                </sui-table-body>
-              </sui-table>
-            </div>
+    <sui-grid>
+      <sui-grid-row>
+        <sui-grid-column :width="16">
+          <DnsMenu selected-section="Settings" />
+        </sui-grid-column>
+      </sui-grid-row>
+      <sui-grid-row>
+        <sui-grid-column :width="16">
+          <sui-tab>
+            <sui-tab-pane title="General">
+              <sui-form>
+                <sui-form-field>
+                  <sui-checkbox label="Allow Zone Transfers" />
+                </sui-form-field>
+                <sui-form-field>
+                  <sui-checkbox label="Allow Recursion" />
+                </sui-form-field>
+              </sui-form>
+            </sui-tab-pane>
+            <sui-tab-pane title="Zones">
+              <div class="table-container">
+                <sui-table compact selectable padded basic="very">
+                  <sui-table-header>
+                    <sui-table-row>
+                      <sui-table-header-cell>Name</sui-table-header-cell>
+                      <sui-table-header-cell>Primary Name Server</sui-table-header-cell>
+                      <sui-table-header-cell>Primary Name Server Address</sui-table-header-cell>
+                    </sui-table-row>
+                  </sui-table-header>
+                  <sui-table-body>
+                    <sui-table-row v-for="zone in zones" :key="zone.id">
+                      <sui-table-cell>
+                        <router-link :to="{name: 'dns-zone-editor', params: {zoneID: 1}}">
+                          {{ zone.name }}
+                        </router-link>
+                      </sui-table-cell>
+                      <sui-table-cell>{{ zone.primaryNameServer }}</sui-table-cell>
+                      <sui-table-cell>{{ zone.primaryNameServerAddress }}</sui-table-cell>
+                    </sui-table-row>
+                  </sui-table-body>
+                </sui-table>
+              </div>
 
-            <div is="sui-button-group">
-              <sui-button icon="plus" compact />
-              <sui-button icon="copy" compact />
-              <sui-button icon="minus" compact />
-              <sui-button icon="pencil alternate" compact />
-            </div>
-          </sui-tab-pane>
-          <sui-tab-pane title="Logging">
-            <sui-form>
-              <sui-form-field inline>
-                <label for="log-path">Log Path:</label>
-                <input id="log-path" type="text" />
-                <sui-button
-                    type="button"
-                    icon="ellipsis horizontal"
-                    size="small"
-                    style="margin-left: 10px;"
-                />
-              </sui-form-field>
-              <sui-form-field inline>
-                <label for="log-level">Log Level:</label>
-                <sui-dropdown
-                    id="log-level"
-                    placeholder="Select Level"
-                    selection
-                    :options="logDetailOptions"
-                    v-model="selectedLogDetailLevel"
-                />
-              </sui-form-field>
-              <p>
-                Will log most messages. This is the default for the DNS Service.
-              </p>
-            </sui-form>
-          </sui-tab-pane>
-        </sui-tab>
-      </sui-grid-column>
-    </sui-grid-row>
-  </sui-grid>
+              <div is="sui-button-group">
+                <sui-button icon="plus" compact />
+                <sui-button icon="copy" compact />
+                <sui-button icon="minus" compact />
+                <sui-button icon="pencil alternate" compact />
+              </div>
+            </sui-tab-pane>
+            <sui-tab-pane title="Secondary Zones">
+              <div class="table-container">
+                <sui-table compact selectable padded basic="very">
+                  <sui-table-header>
+                    <sui-table-row>
+                      <sui-table-header-cell>Zone Name</sui-table-header-cell>
+                      <sui-table-header-cell>Primaries</sui-table-header-cell>
+                    </sui-table-row>
+                  </sui-table-header>
+                  <sui-table-body>
+                    <sui-table-row v-for="zone in seconaryZones" :key="zone.id">
+                      <sui-table-cell>{{ zone.name }}</sui-table-cell>
+                      <sui-table-cell>{{ zone.primaryNameServer }}</sui-table-cell>
+                    </sui-table-row>
+                  </sui-table-body>
+                </sui-table>
+              </div>
+
+              <div is="sui-button-group">
+                <sui-button icon="plus" compact @click="openSecondaryZoneEditor" />
+                <sui-button icon="copy" compact />
+                <sui-button icon="minus" compact />
+                <sui-button icon="pencil alternate" compact @click="openSecondaryZoneEditor" />
+              </div>
+            </sui-tab-pane>
+            <sui-tab-pane title="Logging">
+              <sui-form>
+                <sui-form-field inline>
+                  <label for="log-path">Log Path:</label>
+                  <input id="log-path" type="text" />
+                  <sui-button
+                      type="button"
+                      icon="ellipsis horizontal"
+                      size="small"
+                      style="margin-left: 10px;"
+                  />
+                </sui-form-field>
+                <sui-form-field inline>
+                  <label for="log-level">Log Level:</label>
+                  <sui-dropdown
+                      id="log-level"
+                      placeholder="Select Level"
+                      selection
+                      :options="logDetailOptions"
+                      v-model="selectedLogDetailLevel"
+                  />
+                </sui-form-field>
+                <p>
+                  Will log most messages. This is the default for the DNS Service.
+                </p>
+              </sui-form>
+            </sui-tab-pane>
+          </sui-tab>
+        </sui-grid-column>
+      </sui-grid-row>
+    </sui-grid>
+  </div>
 </template>
 
 <script>
 import DnsMenu from "@/Modules/DNS/Components/DnsMenu";
+import DnsSecondaryZoneEditorPop from "@/Modules/DNS/Components/DnsSecondaryZoneEditorPop";
 export default {
   name: "DnsSettings",
-  components: {DnsMenu},
+  components: {DnsSecondaryZoneEditorPop, DnsMenu},
   data() {
     const logDetailOptions = [
       { key: 1, text: "Critical", value: 1 },
@@ -141,7 +146,13 @@ export default {
       selectedLogDetailLevel: 5,
       logDetailOptions: logDetailOptions,
       zones: zones,
-      seconaryZones: seconaryZones
+      seconaryZones: seconaryZones,
+      secondaryZoneEditorOpen: false
+    }
+  },
+  methods: {
+    openSecondaryZoneEditor: function() {
+      this.secondaryZoneEditorOpen = true;
     }
   }
 }
