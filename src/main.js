@@ -110,11 +110,14 @@ import SoftwareUpdateLog from "@/Modules/SoftwareUpdate/SoftwareUpdateLog";
 import SoftwareUpdateSettings from "@/Modules/SoftwareUpdate/SoftwareUpdateSettings";
 import DhcpSettingsSubnetEditor from "@/Modules/DHCP/DhcpSettingsSubnetEditor";
 import DnsSettingsZoneEditor from "@/Modules/DNS/DnsSettingsZoneEditor";
+import axios from "axios";
 
 Vue.config.productionTip = false
 
 Vue.use(SemanticUI);
 Vue.use(VueRouter);
+
+axios.defaults.baseURL = process.env.VUE_APP_BASE_API_URL;
 
 const router = new VueRouter({
   mode: 'history',
