@@ -8,7 +8,7 @@
     <sui-grid-row>
       <sui-grid-column :width="16">
         <p style="text-align: center; margin-bottom: 25px;">
-          Apple File Service is: Running
+          Apple File Service is: {{ serviceStatus }}
         </p>
 
         <sui-divider />
@@ -34,7 +34,7 @@
 
         <sui-divider />
         <p style="text-align: center;">
-          Start Time: Wednesday, September 18, 2019 9:50:14 PM America/New_York
+          Start Time: {{ startTime }}
         </p>
       </sui-grid-column>
     </sui-grid-row>
@@ -43,9 +43,50 @@
 
 <script>
 import AfpMenu from "@/Modules/AFP/Components/AfpMenu";
+import axios from "axios";
+import {format} from "date-fns";
 export default {
   name: "AfpOverview",
-  components: {AfpMenu}
+  components: {AfpMenu},
+  data() {
+    return {
+      loading: true,
+      serviceInfo: {}
+    }
+  },
+  mounted() {
+    this.info();
+  },
+  methods: {
+    info: function() {
+      const url = "/afp/info";
+
+      this.loading = true;
+      axios.get(url).then((response) => {
+        this.serviceInfo = response.data;
+        this.loading = false;
+      }).catch((e) => {
+        this.loading = false;
+
+        let alertText = "An error occurred while trying to fetch service info. (";
+        alertText += e.toString();
+        alertText += ")";
+        window.alert(alertText);
+      });
+    }
+  },
+  computed: {
+    serviceStatus: function() {
+      return this.serviceInfo.running ? "Running" : "Stopped";
+    },
+    startTime: function () {
+      if (this.serviceInfo.running) {
+        return format(new Date(this.serviceInfo.start_time), "PPPPpppp");
+      } else {
+        return "Not available - Service is not running";
+      }
+    }
+  }
 }
 </script>
 
